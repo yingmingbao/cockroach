@@ -112,7 +112,7 @@ func (w rawTSWriter) Emit(data *tspb.TimeSeriesData) error {
 		fmt.Fprintf(w.w, "%s %s\n", data.Name, data.Source)
 	}
 	for _, d := range data.Datapoints {
-		fmt.Fprintf(w.w, "%s %v\n", d.TimestampNanos, d.Value)
+		fmt.Fprintf(w.w, "%v %v\n", d.TimestampNanos, d.Value)
 	}
 	return nil
 }
